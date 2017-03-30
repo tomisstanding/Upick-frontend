@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, { Component } from "react";
+
+import Nav from "../Nav/Nav";
 
 class Homepage extends Component {
   constructor(props) {
@@ -12,8 +13,8 @@ class Homepage extends Component {
         <div className="bg-img"></div>
         <Nav />
         <div className="homepage-container">
-          <h1>Looking for something to do today?</h1>
-            <button className="outline-btn">pïck</button>
+          <h1>What are you going to explore today?</h1>
+            <button className="outline-btn">Pïck</button>
         </div>
         <div className="video">
         <iframe
