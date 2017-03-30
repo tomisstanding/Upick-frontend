@@ -7,12 +7,10 @@ import "./styles/style.css";
 import "./vendors/font-awesome/css/font-awesome.css";
 
 import Homepage from "./components/Homepage/Homepage";
-import Picks from "./components/Picks/Picks";
 
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Homepage} />
-    <Route path="/picks" component={Picks} />
   </Router>
   , document.getElementById("app")
 );
