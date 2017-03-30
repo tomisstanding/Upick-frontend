@@ -6,6 +6,10 @@ body {
   background-color: #070B1D;
 }
 
+button {
+  margin-top: 200px !important;
+}
+
 h1, h2, h3, h4, h5, h6, p, li {
   color: white;
   font-family: 'Open Sans', sans-serif;
@@ -338,14 +342,46 @@ a, button {
   display: none;
 }
 
+.input {
+  color: #FAFAFA;
+  text-align: center;
+  font-size: 22px;
+  background: transparent;
+  border: 3px solid black;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  display: inline-flex;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+}
+
 @keyframes loading-animation {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
 }
 
 @media (max-width: 1100px) {
+
+  .input {
+    color: #FAFAFA;
+    background: transparent;
+    border: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    position: absolute;
+    align-items: center;
+  }
+
   .video {
     display: none;
+  }
+
+  button {
+    margin-top: 200px !important;
   }
 
   .bg-img {
@@ -361,9 +397,15 @@ a, button {
   .bar-card .secondary-btn {
     margin-top: 20px;
   }
+
 }
 
 @media (max-width: 768px) {
+
+  button {
+    margin-top: 200px !important;
+  }
+
   h1 {
     font-size: 42px !important;
   }
@@ -379,6 +421,19 @@ a, button {
   .bar-card .outline-btn {
     margin-right: 0;
   }
+
+  .input {
+    color: #FAFAFA;
+    background: transparent;
+    border: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    position: absolute;
+    align-items: center;
+  }
+
 }
 
 @media (max-width:600px) {
@@ -386,7 +441,7 @@ a, button {
   h1 {
     font-size: 34px !important;
     line-height: 45px;
-    color: black;
+    color: #FAFAFA;
   }
 
   .outline-btn {
@@ -405,9 +460,9 @@ a, button {
   }
 
   .outline-btn:hover {
-  background-color: #311d7c;
-  color: #FAFAFA;
-  transform: translateY(-3px);
+    background-color: #311d7c;
+    color: #FAFAFA;
+    transform: translateY(-3px);
   }
 
   h2 {
@@ -448,6 +503,22 @@ a, button {
     text-align: left;
   }
 
+  .input {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 22px;
+    background: transparent;
+    border: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    margin-right: -50px;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+  }
+
   .saved-bar-info {
     display: flex;
     flex-direction: column;
@@ -465,5 +536,21 @@ a, button {
 
   .bg-img {
     background-image: url('../assets/background.jpg');
+    z-index: -2;
   }
+
+  .bg-img .overlay {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3,6,12,.90);
+  }
+
+  button {
+    margin-top: 200px !important;
+  }
+
 }
