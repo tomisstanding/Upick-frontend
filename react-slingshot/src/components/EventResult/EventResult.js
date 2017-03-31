@@ -31,7 +31,7 @@ class EventResult extends Component {
   }
 
   componentDidMount() {
-      fetch(`http://localhost:8000/events/`, {
+      fetch(`http://localhost:8000/events/?location={this.state.value}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -78,35 +78,32 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
+    event.preventDefault();
 
-    // fetch('http://localhost:8000/events', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     events: {
-    //       title: `${this.state.event.title}`,
-    //       description: `${this.state.event.description}`,
-    //       venue_name: `${this.state.event.venue_name}`,
-    //       venue_address: `${this.state.event.venue_address}`
-    //     }
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // .then((data) => {
-    //   // browserHistory.push('/users/dashboard');
-    //   console.log(data);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // })
+    fetch('http://localhost:8000/events', {
+      method: 'POST',
+      body: JSON.stringify({
+        events: {
+          title: `${this.state.event.title}`,
+          description: `${this.state.event.description}`,
+          venue_name: `${this.state.event.venue_name}`,
+          venue_address: `${this.state.event.venue_address}`
+        }
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((data) => {
+      // browserHistory.push('/users/dashboard');
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
 
   }
 
-              // <a href={`http://www.google.com/maps/place/${this.state.bars.name}/@${this.state.bars.coordinates.latitude},${this.state.bars.coordinates.longitude},16z`} target="_blank">
-              //   <button className="secondary-btn">View on Google Maps<i className="fa fa-angle-right" id="secondary-btn-caret"></i></button>
-              // </a>
   render(){
     return(
       <div>

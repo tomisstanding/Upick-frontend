@@ -2,9 +2,22 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import Nav from "../Nav/Nav";
 
-class Homepage extends Component {
+class Homepage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    console.log('A city was submitted: ' + this.state.value);
+    event.preventDefault();
   }
 
   render() {
@@ -15,9 +28,11 @@ class Homepage extends Component {
         <Nav />
         <div className="homepage-container">
           <h1>Where are you going to explore today?</h1>
-            <input className="input" placeholder="enter a location"></input>
+            <form onSubmit={this.handleSubmit}>
+            <input className="input" value={this.state.value} onChange={this.handleChange} placeholder="enter a location"></input>
+            </form>
             <Link to="events">
-              <button className="outline-btn">Pïck</button>
+              <button className="outline-btn" value="Submit">Pïck</button>
             </Link>
         </div>
         <div className="video">
