@@ -69,13 +69,15 @@ a, button {
 
 .navbar .logo {
   flex: 2;
-  background-image: url('../assets/upick.png');
+  background-image: url('../assets/upicklogo.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 165px;
-  height: 75px;
-  margin-top: 50px;
-  margin-left: 35px;
+  z-index: -1;
+  background-size: 130px;
+  width: 250px;
+  height: 250px;
+  margin-top: 180px;
+  margin-left: 15px;
 }
 
 .navbar ul {
@@ -257,6 +259,7 @@ a, button {
   padding: 0 20px;
   line-height: 45px;
   border-radius: 40px;
+  border-color: #FAFAFA;
   transition: background-color 0.25s, transform 0.5s;
   -webkit-transition: background-color 0.15s, transform 0.5s;
   cursor: pointer;
@@ -352,7 +355,7 @@ a, button {
   border-left: 0px;
   border-right: 0px;
   display: inline-flex;
-  margin-left: -30px;
+  margin-left: -45px;
   margin-top: 40px;
   position: absolute;
   align-items: center;
@@ -381,12 +384,12 @@ textarea:focus, input:focus {
     text-align: center;
     font-size: 1.2rem;
     background: transparent;
-    border: 3px solid black;
+    border: 3px solid white;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -30px;
+    margin-left: -45px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
@@ -409,6 +412,16 @@ textarea:focus, input:focus {
     background-size: cover;
     position: fixed;
     z-index: -1;
+  }
+
+  .bg-img, .overlay {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3,6,12,.50);
   }
 
   .bar-card .secondary-btn {
@@ -444,16 +457,26 @@ textarea:focus, input:focus {
     text-align: center;
     font-size: 1.2rem;
     background: transparent;
-    border: 3px solid black;
+    border: 3px solid white;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -30px;
+    margin-left: -45px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
+  }
+
+  .bg-img, .overlay {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3,6,12,.50);
   }
 
 }
@@ -469,8 +492,7 @@ textarea:focus, input:focus {
   .outline-btn {
     text-align: center;
     color: #FAFAFA;
-    background-color: #270e47;
-    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
     height: 50px;
     min-width: 125px;
     padding: 0 20px;
@@ -493,7 +515,7 @@ textarea:focus, input:focus {
 
   .navbar .logo {
     width: 145px;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   .navbar ul {
@@ -530,13 +552,13 @@ textarea:focus, input:focus {
     text-align: center;
     font-size: 1.2rem;
     background: transparent;
-    border: 3px solid black;
+    border: 3px solid white;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
     margin-top: 40px;
-    margin-left: -30px;
+    margin-left: -45px;
     position: absolute;
     align-items: center;
     align-content: center;
@@ -562,14 +584,14 @@ textarea:focus, input:focus {
     z-index: -2;
   }
 
-  .bg-img .overlay {
+  .bg-img, .overlay {
     position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(3,6,12,.90);
+    background-color: rgba(3,6,12,.50);
   }
 
   button {
