@@ -118,7 +118,7 @@ a, button {
    margin-top: 15%;
 }
 
-.bar-results {
+.event-results {
   display: flex;
   max-width: 89%;
   margin: 0 auto;
@@ -126,7 +126,7 @@ a, button {
   margin-top: 10%;
 }
 
-.bar-results .bar-card {
+.event-results .event-card {
   box-sizing: border-box;
   flex: 1;
   background-color: #0F1426;
@@ -135,17 +135,17 @@ a, button {
   transition: .5s;
 }
 
-.bar-results .bar-card:hover {
+.event-results .event-card:hover {
   background-color: #191E34;
   transform: translateY(-5px);
 }
 
-.bar-results .bar-card ul {
+.event-results .event-card ul {
   list-style: none;
   padding-left: 0;
 }
 
-.bar-info li {
+.event-info li {
   line-height: 28px;
   font-size: 15px;
   letter-spacing: 0.25px;
@@ -157,25 +157,25 @@ a, button {
   padding: 60px 0px 0px 40px;
 }
 
-.saved-bar-container {
+.saved-event-container {
   text-align: left;
   border-bottom: rgba(255,255,255,.10) 1px solid;
   max-width: 90%;
   margin: 0 auto;
 }
 
-.saved-bar-container h3 {
+.event-bar-container h3 {
   font-size: 24px;
   font-weight: 400;
 }
 
-.saved-bar-info {
+.saved-event-info {
   display: flex;
   align-items: flex-end;
   margin-bottom: 32px;
 }
 
-.saved-bar-info li {
+.saved-event-info li {
   font-size: 14px;
   line-height: 23px;
   letter-spacing: 0.25px;

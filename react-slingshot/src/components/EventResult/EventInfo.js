@@ -11,18 +11,20 @@ function EventInfo(props) {
     statusStyle.color = '#41FFC0';
 
   } else {
-    restaurantStatus = 'This Place is Closed'
+    eventStatus = 'This Place is Closed'
   }
 
   return(
       <div>
-        <h2>{props.name}</h2>
+        <h2>{props.name}
+        </h2>
         <div className="event-info">
           <ul>
             <li style={statusStyle} >{eventStatus}</li>
-            <li>Rating: {props.rating}</li>
-            <li>Phone: {props.phone_number}</li>
-            <li>Price: {props.price_range}</li>
+            <li>Title: {props.title}</li>
+            <li>Description: {props.description}</li>
+            <li>Venue: {props.venue}</li>
+            <li>Address: {props.address}</li>
           </ul>
         </div>
       </div>

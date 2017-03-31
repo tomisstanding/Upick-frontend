@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router";
 import Nav from "../Nav/Nav";
 
 class Homepage extends Component {
@@ -16,7 +16,9 @@ class Homepage extends Component {
         <div className="homepage-container">
           <h1>Where are you going to explore today?</h1>
             <input className="input" placeholder="enter a location"></input>
-            <button className="outline-btn">Pïck</button>
+            <Link to="events">
+              <button className="outline-btn">Pïck</button>
+            </Link>
         </div>
         <div className="video">
         <iframe
