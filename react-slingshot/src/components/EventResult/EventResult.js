@@ -107,8 +107,8 @@ class EventResult extends Component {
         <Nav />
         <div className="container">
           <div className="loading-anim" style={this.state.loader}></div>
-          <div className="bar-results">
-            <div className="bar-card" style={this.state.isVisible}>
+          <div className="event-results">
+            <div className="event-card">
               <EventInfo
                 title={this.state.events[0].title}
                 description={this.state.events[0].description}
@@ -124,7 +124,7 @@ class EventResult extends Component {
             </div>
             <div className="randomizer">
               <h2>Need another option?</h2>
-              <button className="standard-btn" onClick={this.selectNewEvent.bind(this)}>Feeling Picky?.</button>
+              <button className="standard-btn" onClick={this.selectNewEvent.bind(this)}>Feeling Picky?</button>
             </div>
           </div>
         </div>
