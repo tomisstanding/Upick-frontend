@@ -14,7 +14,7 @@ class Homepage extends Component {
         <div className="overlay"></div>
         <Nav />
         <div className="homepage-container">
-          <h1>What are you going to explore today?</h1>
+          <h1>Where are you going to explore today?</h1>
             <input className="input" placeholder="Enter a city"></input>
             <button className="outline-btn">Pïck</button>
         </div>
