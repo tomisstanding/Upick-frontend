@@ -12,7 +12,7 @@ button {
 
 h1, h2, h3, h4, h5, h6, p, li {
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', sans-serif;
 }
 
 h1 {
@@ -26,6 +26,10 @@ h2 {
   font-size: 34px;
   font-weight: 600;
   margin: 0;
+}
+
+#picky {
+  font-family: 'Permanent Marker';
 }
 
 h4 {
@@ -47,7 +51,7 @@ a, button {
   left:50%;
 }
 
-#bar-status {
+#event-status {
   color: #41FFC0;
 }
 
@@ -130,9 +134,15 @@ a, button {
   box-sizing: border-box;
   flex: 1;
   background-color: #ad670a;
-  padding: 60px 45px;
+  margin-top: 50px;
+  padding: 20px 45px;
   border: rgba(255,255,255,0) 1px solid;
   transition: .5s;
+}
+
+a {
+  color: white;
+  margin: 0 auto;
 }
 
 .event-results .event-card:hover {
@@ -154,7 +164,7 @@ a, button {
 .randomizer {
   flex: 1;
   text-align: center;
-  padding: 60px 0px 0px 40px;
+  padding: 50px 0px 0px 40px;
 }
 
 .event-bar-container h3 {
@@ -486,7 +496,7 @@ textarea:focus, input:focus {
     margin-top: 3%;
   }
 
-  .event-results .bar-card {
+  .event-results .event-card {
     list-style: none;
     text-align: center;
     padding: 38px 30px;

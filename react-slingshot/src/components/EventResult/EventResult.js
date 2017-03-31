@@ -19,6 +19,7 @@ class EventResult extends Component {
       events: [
         {
           image: "dummy.jpg",
+          time: '',
           title: 'Please Wait While We Get Your Results',
           description: 'Thank you for your patience',
           venue: '',
@@ -40,7 +41,8 @@ class EventResult extends Component {
 
         const events = response.results.search.events.event.map((event) => {
           return {
-            image:event.image.medium,
+            image: event.image.url || 'https://d30y9cdsu7xlg0.cloudfront.net/png/34527-200.png',
+            time: event.start_time,
             title: event.title,
             description: event.description,
             venue: event.venue_name,
@@ -114,7 +116,8 @@ class EventResult extends Component {
           <div className="event-results">
             <div className="event-card">
               <EventInfo
-                // image={this.state.events.[0].image}
+                image={this.state.events[0].image}
+                time={this.state.events[0].time}
                 title={this.state.events[0].title}
                 description={this.state.events[0].description}
                 venue={this.state.events[0].venue}
@@ -124,8 +127,8 @@ class EventResult extends Component {
 
             </div>
             <div className="randomizer">
-              <h2>Need another option?</h2>
-              <button className="standard-btn" onClick={this.selectNewEvent.bind(this)}>Feeling Picky?</button>
+              <h2 id="picky">Feeling Picky?</h2>
+              <button className="standard-btn" onClick={this.selectNewEvent.bind(this)}>Pick Again</button>
             </div>
           </div>
         </div>
