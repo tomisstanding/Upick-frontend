@@ -18,10 +18,12 @@ class EventResult extends Component {
       },
       events: [
         {
+          image: "dummy.jpg",
           title: 'Dummy event',
           description: 'Holding place for event',
           venue: 'Some venue',
-          address: '1234 fake street'
+          address: '1234 fake street',
+          url: 'http://fakestuff.com'
         }
       ]
     }
@@ -38,10 +40,12 @@ class EventResult extends Component {
 
         const events = response.results.search.events.event.map((event) => {
           return {
+            image:event.image.medium,
             title: event.title,
             description: event.description,
             venue: event.venue_name,
-            address: event.venue_address
+            address: event.venue_address,
+            url: event.venue_url
           };
         });
 
@@ -110,17 +114,14 @@ class EventResult extends Component {
           <div className="event-results">
             <div className="event-card">
               <EventInfo
+                // image={this.state.events.[0].image}
                 title={this.state.events[0].title}
                 description={this.state.events[0].description}
                 venue={this.state.events[0].venue}
                 address={this.state.events[0].address}
+                url={this.state.events[0].url}
               />
-              <button
-                className="outline-btn"
-                onClick={this.handleSubmit.bind(this)}
-              >
-              Add to Favorites
-              </button>
+
             </div>
             <div className="randomizer">
               <h2>Need another option?</h2>
