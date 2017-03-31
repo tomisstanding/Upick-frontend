@@ -19,11 +19,11 @@ class EventResult extends Component {
       events: [
         {
           image: "dummy.jpg",
-          title: 'Dummy event',
-          description: 'Holding place for event',
-          venue: 'Some venue',
-          address: '1234 fake street',
-          url: 'http://fakestuff.com'
+          title: 'Please Wait While We Get Your Results',
+          description: 'Thank you for your patience',
+          venue: '',
+          address: '',
+          url: ''
         }
       ]
     }
