@@ -347,15 +347,26 @@ a, button {
   text-align: center;
   font-size: 1.2rem;
   background: transparent;
-  border: 3px solid black;
+  border: 3px solid white;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   display: inline-flex;
   margin-left: -30px;
+  margin-top: 40px;
   position: absolute;
   align-items: center;
   align-content: center;
+}
+
+input, select, textarea{
+  color: #FAFAFA;
+  font-family: 'Permanent Marker';
+}
+
+textarea:focus, input:focus {
+  color: #FAFAFA;
+  font-family: 'Permanent Marker';
 }
 
 @keyframes loading-animation {
@@ -376,6 +387,7 @@ a, button {
     border-right: 0px;
     display: inline-flex;
     margin-left: -30px;
+    margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
@@ -438,6 +450,7 @@ a, button {
     border-right: 0px;
     display: inline-flex;
     margin-left: -30px;
+    margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
@@ -522,6 +535,7 @@ a, button {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
+    margin-top: 40px;
     margin-left: -30px;
     position: absolute;
     align-items: center;

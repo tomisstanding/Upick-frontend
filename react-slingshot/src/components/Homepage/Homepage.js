@@ -15,7 +15,7 @@ class Homepage extends Component {
         <Nav />
         <div className="homepage-container">
           <h1>Where are you going to explore today?</h1>
-            <input className="input" placeholder="Enter a city"></input>
+            <input className="input" placeholder="enter a location"></input>
             <button className="outline-btn">Pïck</button>
         </div>
         <div className="video">
