@@ -46,8 +46,10 @@ button {
   flex: 1;
   background-color: #ad670a;
   margin-top: 50px;
+  margin-left: -30px;
   padding: 20px 45px;
-  border: rgba(255,255,255,0) 1px solid;
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px black;
   transition: .5s;
 }
 
@@ -76,7 +78,7 @@ button {
   color: #41FFC0;
 }
 
-.event-bar-container h3 {
+.event-container h3 {
   font-size: 24px;
   font-weight: 400;
 }
@@ -179,9 +181,9 @@ input, select, textarea{
   padding-right: 10px;
 }
 
-.loading-anim {
-  width: 50px;
-  height: 50px;
+/*.loading-anim {
+  width: 500px;
+  height: 500px;
   background-color: transparent;
   border-radius: 100%;
   border: rgba(255,255,255,.25) 1px solid;
@@ -190,9 +192,9 @@ input, select, textarea{
   animation-iteration-count: infinite;
   animation-duration: 1s;
   position: absolute;
-  top: 40%;
+  top: 50%vh;
   left: 27.5%;
-}
+}*/
 
 .mbl-img {
   display: none;
@@ -274,8 +276,8 @@ input, select, textarea{
 }
 
 .randomizer {
-  margin-top: -100px;
-  margin-left: -200px;
+  margin-top: -170px;
+  margin-left: -20px;
   text-align: center;
   padding: 50px 0px 0px -40px;
 }
@@ -296,7 +298,8 @@ input, select, textarea{
 .standard-btn {
   text-align: center;
   color: #1F243D;
-  background-color: white;
+  background-color: transparent;
+  font-family: 'Permanent Marker';
   height: 50px;
   min-width: 145px;
   padding: 0 20px;
@@ -310,8 +313,9 @@ input, select, textarea{
 }
 
 .standard-btn:hover {
-  background-color: rgba(255,255,255,0.75);
-  transform: translateY(-3px);
+  background-color: rgba(255,100,100,0.65);
+  transform: translateY(-7px);
+  color: white;
 }
 
 .secondary-btn {
@@ -521,12 +525,15 @@ textarea:focus, input:focus {
     display:flex;
     flex-direction: column;
     margin-top: 3%;
+    border-color: black;
+    border-radius: 1px solid;
   }
 
   .event-results .event-card {
     list-style: none;
     text-align: center;
     padding: 38px 30px;
+    margin: 0 auto;
   }
 
   .event-card h2 {
@@ -555,8 +562,10 @@ textarea:focus, input:focus {
   }
 
   .loading-anim {
-    top: 25%;
+    top: 10%;
     left: 43.5%;
+    height: 100px;
+    width: 100px;
   }
 
   .randomizer {
