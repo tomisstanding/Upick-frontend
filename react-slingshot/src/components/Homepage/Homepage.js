@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import Nav from "../Nav/Nav";
+import { browserHistory } from "react-router";
 
-class Homepage extends React.Component {
+class Homepage extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      city: ''
+    };
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  handleChange(event){
+    this.setState({
+      city: event.target.value
+    })
+  };
 
   handleSubmit(event) {
-    console.log('A city was submitted: ' + this.state.value);
     event.preventDefault();
+
+    window.localStorage.setItem("city", this.state.city)
+    browserHistory.push('/events');
   }
 
   render() {
@@ -28,19 +32,24 @@ class Homepage extends React.Component {
         <Nav />
         <div className="homepage-container">
           <h1>Where are you going to explore today?</h1>
-            <form onSubmit={this.handleSubmit}>
-            <input className="input" value={this.state.value} onChange={this.handleChange} placeholder="enter a location"></input>
-            </form>
-            <Link to="events">
-              <button className="outline-btn" value="Submit">Pïck</button>
-            </Link>
+            <input
+              onChange={this.handleChange.bind(this)}
+              className="input"
+              placeholder="enter a location"
+              name="city"
+            />
+            <button
+              className="outline-btn"
+              onClick={this.handleSubmit.bind(this)}>
+              Pïck
+            </button>
         </div>
         <div className="video">
-        <iframe
-          src="https://player.vimeo.com/video/61659572?autoplay=1&loop=1&title=0&byline=0&portrait=0"
-          width="1920"
-          height="1080">
-        </iframe>
+          <iframe
+            src="https://player.vimeo.com/video/61659572?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+            width="1920"
+            height="1080">
+          </iframe>
         <div className="overlay"></div>
         </div>
       </div>

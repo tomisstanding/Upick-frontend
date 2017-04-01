@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, browserHistory } from "react-router";
 
-
+// import Homepage from "../Homepage/Homepage.js"
 import Nav from "../Nav/Nav";
 import EventInfo from "./EventInfo";
 
@@ -31,7 +31,7 @@ class EventResult extends Component {
   }
 
   componentDidMount() {
-      fetch(`http://localhost:8000/events/?location={this.state.value}`, {
+      fetch(`http://localhost:8000/events/?location=${localStorage.city}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -78,29 +78,29 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
-    fetch('http://localhost:8000/events', {
-      method: 'POST',
-      body: JSON.stringify({
-        events: {
-          title: `${this.state.event.title}`,
-          description: `${this.state.event.description}`,
-          venue_name: `${this.state.event.venue_name}`,
-          venue_address: `${this.state.event.venue_address}`
-        }
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((data) => {
-      // browserHistory.push('/users/dashboard');
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    // fetch(`http://localhost:8000/events/${this.state.value}`, {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     events: {
+    //       title: `${this.state.event.title}`,
+    //       description: `${this.state.event.description}`,
+    //       venue_name: `${this.state.event.venue_name}`,
+    //       venue_address: `${this.state.event.venue_address}`
+    //     }
+    //   }),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // })
+    // .then((data) => {
+    //   // browserHistory.push('/users/dashboard');
+    //   console.log(data);
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // })
 
   }
 
@@ -109,7 +109,6 @@ class EventResult extends Component {
       <div>
         <Nav />
         <div className="container">
-          <div className="loading-anim" style={this.state.loader}></div>
           <div className="event-results">
             <div className="event-card">
               <EventInfo
