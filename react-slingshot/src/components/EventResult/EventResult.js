@@ -36,9 +36,6 @@ class EventResult extends Component {
       })
       .then(r => r.json())
       .then(response => {
-
-        console.log(response);
-
         const events = response.results.search.events.event.map((event) => {
           return {
             image: event.image.url || 'https://d30y9cdsu7xlg0.cloudfront.net/png/34527-200.png',
@@ -120,8 +117,32 @@ class EventResult extends Component {
                 address={this.state.events[0].address}
                 url={this.state.events[0].url}
               />
-
             </div>
+
+             <div className="event-card">
+              <EventInfo
+                image={this.state.events[1].image}
+                time={this.state.events[1].time}
+                title={this.state.events[1].title}
+                description={this.state.events[1].description}
+                venue={this.state.events[1].venue}
+                address={this.state.events[1].address}
+                url={this.state.events[1].url}
+              />
+            </div>
+
+             <div className="event-card">
+              <EventInfo
+                image={this.state.events[2].image}
+                time={this.state.events[2].time}
+                title={this.state.events[2].title}
+                description={this.state.events[2].description}
+                venue={this.state.events[2].venue}
+                address={this.state.events[2].address}
+                url={this.state.events[2].url}
+              />
+            </div>
+
             <div className="randomizer">
               <h2 id="picky">Feeling Picky?</h2>
               <button className="standard-btn" onClick={this.selectNewEvent.bind(this)}>Pick Again</button>

@@ -2,6 +2,11 @@
   outline: none;
 }
 
+.event-image {
+  height: 100px;
+  width: 100px;
+}
+
 body {
   background-color: #db7d00;
 }
