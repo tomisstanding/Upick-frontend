@@ -39,6 +39,7 @@ button {
 
 .event-card .outline-btn {
   margin-right: 20px;
+  box-shadow: 3px 3px 2px black;
 }
 
 .event-results .event-card {
@@ -48,14 +49,14 @@ button {
   margin-top: 50px;
   margin-left: -30px;
   padding: 20px 45px;
-  border: 1px solid black;
-  box-shadow: 10px 10px 5px black;
   transition: .5s;
+  box-shadow: 3px 3px 2px black;
 }
 
 .event-results .event-card:hover {
   background-color: #7c4b09;
   transform: translateY(-5px);
+  box-shadow: 15px 15px 12px black;
 }
 
 .event-results .event-card ul {
@@ -483,6 +484,10 @@ textarea:focus, input:focus {
     color: #FAFAFA;
   }
 
+  #picky {
+    margin-top: 25px;
+  }
+
   .outline-btn {
     text-align: center;
     color: #FAFAFA;
@@ -588,7 +593,7 @@ textarea:focus, input:focus {
   }
 
   button {
-    margin-top: 200px !important;
+    margin-top: 300px !important;
   }
 
 }
