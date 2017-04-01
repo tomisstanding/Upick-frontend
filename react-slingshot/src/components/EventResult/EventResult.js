@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, browserHistory } from "react-router";
+import { browserHistory } from "react-router";
 
 // import Homepage from "../Homepage/Homepage.js"
 import Nav from "../Nav/Nav";
@@ -31,7 +31,7 @@ class EventResult extends Component {
   }
 
   componentDidMount() {
-      fetch(`http://localhost:8000/events/?keywords=music&location=${localStorage.city}`, {
+      fetch(`http://localhost:8000/events/?location=${localStorage.city}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -56,7 +56,7 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    fetch(`http://localhost:8000/events/?keywords=music&location=${localStorage.city}`, {
+    fetch(`http://localhost:8000/events/?location=${localStorage.city}`, {
         method: 'GET'
       })
       .then(r => r.json())
