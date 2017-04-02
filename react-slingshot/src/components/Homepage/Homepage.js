@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import { browserHistory } from "react-router";
 
+
 class Homepage extends Component {
   constructor(props) {
     super(props);
