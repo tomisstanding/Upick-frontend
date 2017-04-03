@@ -4,6 +4,8 @@ import {Route, Router, browserHistory} from "react-router";
 import "./styles/normalize.css";
 import "./styles/style.css";
 import "./vendors/font-awesome/css/font-awesome.css";
+require('react-datepicker/dist/react-datepicker.css');
+
 
 import Homepage from "./components/Homepage/Homepage";
 import EventResult from "./components/EventResult/EventResult";

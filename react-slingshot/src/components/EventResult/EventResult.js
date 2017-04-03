@@ -38,7 +38,7 @@ class EventResult extends Component {
     let search = browserHistory.getCurrentLocation().search.substring(1);
     search = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
 
-      fetch(`http://localhost:8000/events?category=${search.category}&location=${search.location}&date=${search.date}`, {
+      fetch(`http://localhost:8000/events?keywords=${search.keywords}&location=${search.location}&date=${search.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -66,7 +66,7 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    fetch(`http://localhost:8000/events?category=${search.category}&location=${search.location}&date=${search.date}`, {
+    fetch(`http://localhost:8000/events?keywords=${search.keywords}&location=${search.location}&date=${search.date}`, {
         method: 'GET'
       })
       .then(r => r.json())

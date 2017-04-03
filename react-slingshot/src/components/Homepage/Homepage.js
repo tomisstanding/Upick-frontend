@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import { browserHistory } from "react-router";
 import DatePicker from "react-datepicker";
-require('react-datepicker/dist/react-datepicker.css');
-
+import moment from "moment";
 
 class Homepage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       city: '',
       date: 'today',
-      category: ''
+      keywords: '',
+      startDate: moment().format('l'),
+      placeholderText: 'select a date'
     };
   }
 
@@ -19,15 +21,29 @@ class Homepage extends Component {
     this.setState({
       city: event.target.value,
       date: event.target.value,
-      category: event.target.value
+      keywords: event.target.value
     })
+  }
+
+  handleDateChange(date) {
+    console.log(date._d)
+    this.setState({
+      startDate: date,
+      placeholderText: date._d
+    })
+  }
+
+  handlePlaceholderChange() {
+    if (this.state.placeholderUpdate === 'false') {
+      return 'false'
+    } else {
+      return 'true'
+    }
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
-
-    browserHistory.push(`/events?category=${this.state.category}&location=${this.state.city}&date=${this.state.date}`);
+    browserHistory.push(`/events?keywords=${this.state.keywords}&location=${this.state.city}&date=${this.state.date}`);
   }
 
   render() {
@@ -37,13 +53,14 @@ class Homepage extends Component {
         <div className="overlay"></div>
         <Nav />
         <div className="homepage-container">
-          <h1>Where are you going to explore today?</h1>
+          <h1>What do you want to do today?</h1>
 
           <div>
             <DatePicker
-              selected={this.state.startDate}
-              onChange={this.handleChange}
-              className="red-border"
+              className="date-picker"
+              onChange={this.handleDateChange.bind(this)}
+              placeholderText={this.state.placeholderText}
+              name="date"
             />
           </div>
 
@@ -56,11 +73,11 @@ class Homepage extends Component {
           />
 
           <input
-            onChange={event => this.setState({category: event.target.value})}
-            value={this.state.category}
+            onChange={event => this.setState({keywords: event.target.value})}
+            value={this.state.keywords}
             className="category-input"
             placeholder="Category: ex. 'Movies' "
-            name="category"
+            name="keywords"
           />
 
           <button

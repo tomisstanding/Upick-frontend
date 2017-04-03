@@ -1,6 +1,5 @@
-
 * {
-  outline: none;
+  outline: none !important;
 }
 
 a, button {
@@ -33,11 +32,12 @@ button {
   border-left: 0px;
   border-right: 0px;
   display: inline-flex;
-  margin-left: -40px;
+  margin-left: -30px;
   margin-top: 40px;
   position: absolute;
   align-items: center;
   align-content: center;
+  width: 190px;
 }
 
 .city-input, select, textarea{
@@ -60,11 +60,7 @@ button {
   position: absolute;
   align-items: center;
   align-content: center;
-}
-
-.calendar {
-  background-color: black;
-  color: black;
+  width: 200px;
 }
 
 .category-input, select, textarea{
@@ -77,6 +73,16 @@ button {
   max-width: 1024px;
   margin: 0 auto;
   text-align: center;
+}
+
+.date-picker {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 3px solid white !important;
+  font-family: 'Permanent Marker' !important;
+  width: 180px !important;
+  text-align: center !important;
+  font-size: 21px;
 }
 
 #eventForm .form-control-feedback {
@@ -113,17 +119,6 @@ button {
   background-color: #7c4b09;
   transform: translateY(-5px);
   box-shadow: 15px 15px 12px black;
-}
-
-.event-results .event-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.event-info li {
-  line-height: 28px;
-  font-size: 15px;
-  letter-spacing: 0.25px;
 }
 
 .event-image {
@@ -211,30 +206,10 @@ h4 {
    margin-top: 15%;
 }
 
-input {
-  color: black;
-}
-
-
 .label {
   opacity: .65;
   padding-right: 10px;
 }
-
-/*.loading-anim {
-  width: 500px;
-  height: 500px;
-  background-color: transparent;
-  border-radius: 100%;
-  border: rgba(255,255,255,.25) 1px solid;
-  border-top: rgba(255,255,255,1) 1px solid;
-  animation-name: loading-animation;
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-  position: absolute;
-  top: 50%vh;
-  left: 27.5%;
-}*/
 
 .mbl-img {
   display: none;
@@ -259,22 +234,6 @@ input {
   width: 250px;
   height: 250px;
   margin: 0 auto;
-}
-
-.navbar ul {
-  flex: 1;
-  padding-left: 0;
-  position: absolute;
-  right: 0;
-  margin: 0;
-  margin-right: 35px;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin-left: 25px;
-  color: white;
-  font-size: 16px;
 }
 
 .navbar a {
@@ -537,7 +496,7 @@ textarea:focus, input:focus {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -40px;
+    margin-left: -30px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
@@ -638,10 +597,6 @@ textarea:focus, input:focus {
     margin-left: -190px;
   }
 
-  .navbar ul {
-    margin-right: 20px;
-  }
-
   .homepage-container {
     max-width: 280px;
     margin: 15% auto 0 auto;
@@ -681,7 +636,7 @@ textarea:focus, input:focus {
     border-right: 0px;
     display: inline-flex;
     margin-top: 40px;
-    margin-left: -40px;
+    margin-left: -30px;
     position: absolute;
     align-items: center;
     align-content: center;
