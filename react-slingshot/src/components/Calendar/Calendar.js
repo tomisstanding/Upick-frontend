@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-require('react-datepicker/dist/react-datepicker.css');
 
 var Example = React.createClass({
   displayName: 'Example',

@@ -9,21 +9,25 @@ class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: ''
+      city: '',
+      date: 'today',
+      category: ''
     };
   }
 
   handleChange(event){
     this.setState({
-      city: event.target.value
+      city: event.target.value,
+      date: event.target.value,
+      category: event.target.value
     })
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    window.localStorage.setItem("city", this.state.city)
-    browserHistory.push('/events');
+
+    browserHistory.push(`/events?category=${this.state.category}&location=${this.state.city}&date=${this.state.date}`);
   }
 
   render() {
@@ -35,16 +39,29 @@ class Homepage extends Component {
         <div className="homepage-container">
           <h1>Where are you going to explore today?</h1>
 
+          <div>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+              className="red-border"
+            />
+          </div>
+
           <input
-            onChange={this.handleChange.bind(this)}
-            className="input"
+            onChange={event => this.setState({city: event.target.value})}
+            value={this.state.city}
+            className="city-input"
             placeholder="enter a location"
             name="city"
           />
 
-          <div>
-            <DatePicker selected={this.state.date} onChange={this.handleChange} />
-          </div>
+          <input
+            onChange={event => this.setState({category: event.target.value})}
+            value={this.state.category}
+            className="category-input"
+            placeholder="Category: ex. 'Movies' "
+            name="category"
+          />
 
           <button
             className="outline-btn"
@@ -52,6 +69,7 @@ class Homepage extends Component {
             Pïck
           </button>
         </div>
+
         <div className="video">
           <iframe
             src="https://player.vimeo.com/video/61659572?autoplay=1&loop=1&title=0&byline=0&portrait=0"

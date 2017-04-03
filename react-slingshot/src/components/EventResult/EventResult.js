@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 
-// import Homepage from "../Homepage/Homepage.js"
+import Homepage from "../Homepage/Homepage.js"
 import Nav from "../Nav/Nav";
 import EventInfo from "./EventInfo";
 
@@ -31,11 +31,21 @@ class EventResult extends Component {
   }
 
   componentDidMount() {
-      fetch(`http://localhost:8000/events/?location=${localStorage.city}`, {
+
+    // Found code to turn an querystring into and object here
+    // http://stackoverflow.com/questions/8648892/convert-url-parameters-to-a-javascript-object
+
+    let search = browserHistory.getCurrentLocation().search.substring(1);
+    search = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+
+      fetch(`http://localhost:8000/events?category=${search.category}&location=${search.location}&date=${search.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
       .then(response => {
+
+        console.log(response);
+
         const events = response.results.search.events.event.map((event) => {
           return {
             image: event.image.url || 'https://d30y9cdsu7xlg0.cloudfront.net/png/34527-200.png',
@@ -56,7 +66,7 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    fetch(`http://localhost:8000/events/?location=${localStorage.city}`, {
+    fetch(`http://localhost:8000/events?category=${search.category}&location=${search.location}&date=${search.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -89,41 +99,25 @@ class EventResult extends Component {
         <div className="container">
           <div className="loading-anim" style={this.state.loader}></div>
             <div className="event-results">
-              <div className="event-card">
-                <EventInfo
-                  image={this.state.events[0].image}
-                  time={this.state.events[0].time}
-                  title={this.state.events[0].title}
-                  description={this.state.events[0].description}
-                  venue={this.state.events[0].venue}
-                  address={this.state.events[0].address}
-                  url={this.state.events[0].url}
-                />
-              </div>
-
-               <div className="event-card">
-                <EventInfo
-                  image={this.state.events[1].image}
-                  time={this.state.events[1].time}
-                  title={this.state.events[1].title}
-                  description={this.state.events[1].description}
-                  venue={this.state.events[1].venue}
-                  address={this.state.events[1].address}
-                  url={this.state.events[1].url}
-                />
-              </div>
-
-               <div className="event-card">
-                <EventInfo
-                  image={this.state.events[2].image}
-                  time={this.state.events[2].time}
-                  title={this.state.events[2].title}
-                  description={this.state.events[2].description}
-                  venue={this.state.events[2].venue}
-                  address={this.state.events[2].address}
-                  url={this.state.events[2].url}
-                />
-              </div>
+              {this.state.events.map((event, index) => {
+                if (index < 3) {
+                  return (
+                    <div key={index} className="event-card">
+                      <EventInfo
+                        image={event.image}
+                        time={event.time}
+                        title={event.title}
+                        description={event.description}
+                        venue={event.venue}
+                        address={event.address}
+                        url={event.url}
+                      />
+                    </div>
+                  );
+                } else {
+                  return "";
+                }
+              })}
 
               <div className="randomizer">
                 <h2 id="picky">Feeling Picky?</h2>

@@ -23,6 +23,55 @@ button {
   margin-top: 200px !important;
 }
 
+.city-input {
+  color: #FAFAFA;
+  text-align: center;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 3px solid white;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  display: inline-flex;
+  margin-left: -40px;
+  margin-top: 40px;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+}
+
+.city-input, select, textarea{
+  color: #FAFAFA;
+  font-family: 'Permanent Marker';
+}
+
+.category-input {
+  color: #FAFAFA;
+  text-align: center;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 3px solid white;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  display: inline-flex;
+  margin-left: -35px;
+  margin-top: 100px;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+}
+
+.calendar {
+  background-color: black;
+  color: black;
+}
+
+.category-input, select, textarea{
+  color: #FAFAFA;
+  font-family: 'Permanent Marker';
+}
+
 .container {
   position: relative;
   max-width: 1024px;
@@ -162,27 +211,10 @@ h4 {
    margin-top: 15%;
 }
 
-.input {
-  color: #FAFAFA;
-  text-align: center;
-  font-size: 1.2rem;
-  background: transparent;
-  border: 3px solid white;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  display: inline-flex;
-  margin-left: -100px;
-  margin-top: 40px;
-  position: absolute;
-  align-items: center;
-  align-content: center;
+input {
+  color: black;
 }
 
-input, select, textarea{
-  color: #FAFAFA;
-  font-family: 'Permanent Marker';
-}
 
 .label {
   opacity: .65;
@@ -284,7 +316,7 @@ input, select, textarea{
 }
 
 .randomizer {
-  margin-top: -170px;
+  margin-top: -100px;
   margin-left: -100px;
   text-align: center;
   padding: 50px 0px 0px -40px;
@@ -381,7 +413,7 @@ textarea:focus, input:focus {
 
 @media (max-width: 1100px) {
 
-  .input {
+  .city-input {
     color: #FAFAFA;
     text-align: center;
     font-size: 1.2rem;
@@ -391,11 +423,33 @@ textarea:focus, input:focus {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -100px;
+    margin-left: -40px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
+  }
+
+  .category-input {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 3px solid white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    margin-left: -35px;
+    margin-top: 100px;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+  }
+
+  .category-input, select, textarea{
+    color: #FAFAFA;
+    font-family: 'Permanent Marker';
   }
 
   .video {
@@ -442,6 +496,13 @@ textarea:focus, input:focus {
     margin-top: 20px;
   }
 
+  .randomizer {
+    margin-top: -100px;
+    margin-left: -500px;
+    text-align: center;
+    padding: 50px 0px 0px -40px;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -466,7 +527,7 @@ textarea:focus, input:focus {
     margin-right: 0;
   }
 
-  .input {
+  .city-input {
     color: #FAFAFA;
     text-align: center;
     font-size: 1.2rem;
@@ -476,11 +537,33 @@ textarea:focus, input:focus {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -100px;
+    margin-left: -40px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
+  }
+
+  .category-input {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 3px solid white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    margin-left: -35px;
+    margin-top: 100px;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+  }
+
+  .category-input, select, textarea{
+    color: #FAFAFA;
+    font-family: 'Permanent Marker';
   }
 
   .navbar .logo {
@@ -587,7 +670,7 @@ textarea:focus, input:focus {
     text-align: left;
   }
 
-  .input {
+  .city-input {
     color: #FAFAFA;
     text-align: center;
     font-size: 1.2rem;
@@ -598,10 +681,32 @@ textarea:focus, input:focus {
     border-right: 0px;
     display: inline-flex;
     margin-top: 40px;
-    margin-left: -100px;
+    margin-left: -40px;
     position: absolute;
     align-items: center;
     align-content: center;
+  }
+
+  .category-input {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 3px solid white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: inline-flex;
+    margin-left: -35px;
+    margin-top: 100px;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+  }
+
+  .category-input, select, textarea{
+    color: #FAFAFA;
+    font-family: 'Permanent Marker';
   }
 
   .loading-anim {
@@ -631,7 +736,7 @@ textarea:focus, input:focus {
   }
 
   button {
-    margin-top: 100px !important;
+    margin-top: 150px !important;
   }
 
 
