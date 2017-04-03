@@ -11,13 +11,11 @@ function EventInfo(props) {
         <img className="event-image" src={props.image} alt={props.title} />
         <h2>{props.title}</h2>
         <div className="event-info">
-          <ul>
-            <li dangerouslySetInnerHTML={{__html: (props.description)}} /><br>
+            <p dangerouslySetInnerHTML={{__html: (props.description)}}></p><br>
             </br><p>Where: {props.venue}</p><br>
             </br><p>{props.time}</p><br>
-            </br><li>Address: {props.address}</li><br>
+            </br><p>Address: {props.address}</p><br>
             </br><a href={props.url}>Event Website</a>
-          </ul>
         </div>
       </div>
   );

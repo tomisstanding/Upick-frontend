@@ -12,12 +12,6 @@ class Nav extends Component {
         <Link to="/">
           <div className="logo"></div>
         </Link>
-        <ul>
-          <li>
-          </li>
-          <li>
-          </li>
-        </ul>
       </div>
     )
   }

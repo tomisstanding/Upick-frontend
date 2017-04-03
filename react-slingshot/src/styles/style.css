@@ -1,3 +1,4 @@
+
 * {
   outline: none;
 }
@@ -27,6 +28,12 @@ button {
   max-width: 1024px;
   margin: 0 auto;
   text-align: center;
+}
+
+#eventForm .form-control-feedback {
+    top: 0;
+    right: -15px;
+    margin-top: 100px;
 }
 
 .event-results {
@@ -165,7 +172,7 @@ h4 {
   border-left: 0px;
   border-right: 0px;
   display: inline-flex;
-  margin-left: -45px;
+  margin-left: -100px;
   margin-top: 40px;
   position: absolute;
   align-items: center;
@@ -216,11 +223,10 @@ input, select, textarea{
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
-  background-size: 130px;
+  background-size: 200px;
   width: 250px;
   height: 250px;
-  margin-top: 180px;
-  margin-left: 15px;
+  margin: 0 auto;
 }
 
 .navbar ul {
@@ -257,9 +263,10 @@ input, select, textarea{
   background-color: transparent;
   height: 50px;
   min-width: 125px;
-  padding: 0 20px;
+  /*padding: 0 20px;*/
   line-height: 45px;
   border-radius: 40px;
+  z-index: 1;
   border-color: #FAFAFA;
   transition: background-color 0.25s, transform 0.5s;
   -webkit-transition: background-color 0.15s, transform 0.5s;
@@ -363,7 +370,7 @@ textarea:focus, input:focus {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-color: rgba(3,6,12,.50);
 }
 
@@ -384,7 +391,7 @@ textarea:focus, input:focus {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -45px;
+    margin-left: -100px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
@@ -409,13 +416,25 @@ textarea:focus, input:focus {
     z-index: -1;
   }
 
+  .navbar .logo {
+    flex: 2;
+    background-image: url('../assets/upicklogo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    background-size: 130px;
+    width: 145px;
+    height: 250px;
+    margin-left: -490px;
+  }
+
   .bg-img, .overlay {
     position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-color: rgba(3,6,12,.50);
   }
 
@@ -457,11 +476,23 @@ textarea:focus, input:focus {
     border-left: 0px;
     border-right: 0px;
     display: inline-flex;
-    margin-left: -45px;
+    margin-left: -100px;
     margin-top: 40px;
     position: absolute;
     align-items: center;
     align-content: center;
+  }
+
+  .navbar .logo {
+    flex: 2;
+    background-image: url('../assets/upicklogo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    background-size: 130px;
+    width: 145px;
+    height: 250px;
+    margin-left: -300px;
   }
 
   .bg-img, .overlay {
@@ -513,8 +544,15 @@ textarea:focus, input:focus {
   }
 
   .navbar .logo {
+    flex: 2;
+    background-image: url('../assets/upicklogo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    background-size: 130px;
     width: 145px;
-    margin-left: 10px;
+    height: 250px;
+    margin-left: -190px;
   }
 
   .navbar ul {
@@ -560,7 +598,7 @@ textarea:focus, input:focus {
     border-right: 0px;
     display: inline-flex;
     margin-top: 40px;
-    margin-left: -45px;
+    margin-left: -100px;
     position: absolute;
     align-items: center;
     align-content: center;
@@ -593,7 +631,8 @@ textarea:focus, input:focus {
   }
 
   button {
-    margin-top: 300px !important;
+    margin-top: 100px !important;
   }
+
 
 }
