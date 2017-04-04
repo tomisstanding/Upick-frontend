@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 
-import Homepage from "../Homepage/Homepage.js"
 import Nav from "../Nav/Nav";
 import EventInfo from "./EventInfo";
 
@@ -41,8 +40,6 @@ class EventResult extends Component {
       .then(r => r.json())
       .then(response => {
 
-        console.log(response);
-
         const events = response.results.search.events.event.map((event) => {
           return {
             image: event.image.url || 'https://d30y9cdsu7xlg0.cloudfront.net/png/34527-200.png',
@@ -67,7 +64,7 @@ class EventResult extends Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit() {
     console.log('fired!');
     fetch(`http://localhost:8000/events?keywords=${this.state.keywords}&location=${this.state.location}&date=${this.state.date}`, {
         method: 'GET'
@@ -128,7 +125,7 @@ class EventResult extends Component {
             </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

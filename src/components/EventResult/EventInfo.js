@@ -1,11 +1,6 @@
 import React from "react";
 
 function EventInfo(props) {
-  let eventStatus;
-  let statusStyle = {
-    color: '#FF3B44',
-  }
-
   return(
       <div>
         <img className="event-image" src={props.image} alt={props.title} />
