@@ -20,7 +20,10 @@ class EventResult extends Component {
           address: '',
           url: ''
         }
-      ]
+      ],
+      location: '',
+      keywords: '',
+      date: ''
     }
   }
 
@@ -52,7 +55,12 @@ class EventResult extends Component {
           };
         });
 
-        this.setState({ events });
+        this.setState({
+          events,
+          location: search.location,
+          keywords: search.keywords,
+          date: search.date
+        });
       })
       .catch((err) => {
         console.log('ERROR: ', err);
@@ -60,7 +68,8 @@ class EventResult extends Component {
   }
 
   handleSubmit(event) {
-    fetch(`http://localhost:8000/events?keywords=${search.keywords}&location=${search.location}&date=${search.date}`, {
+    console.log('fired!');
+    fetch(`http://localhost:8000/events?keywords=${this.state.keywords}&location=${this.state.location}&date=${this.state.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -114,7 +123,7 @@ class EventResult extends Component {
 
               <div className="randomizer">
                 <h2 id="picky">Feeling Picky?</h2>
-                <button className="standard-btn" onClick={this.handleSubmit}>Pick Again!</button>
+                <button className="standard-btn" onClick={this.handleSubmit.bind(this)}>Pick Again!</button>
               </div>
             </div>
         </div>
