@@ -15,7 +15,7 @@ function EventInfo(props) {
             </br><p>Where: {props.venue}</p><br>
             </br><p>{props.time}</p><br>
             </br><p>Address: {props.address}</p><br>
-            </br><a href={props.url}>Event Website</a>
+            </br><a href={props.url}>Buy tickets or for more information visit here!</a>
         </div>
       </div>
   );

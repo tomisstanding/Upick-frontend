@@ -10,12 +10,6 @@ class EventResult extends Component {
     super(props);
 
     this.state = {
-      loader: {
-        display: 'block'
-      },
-      isVisible: {
-        opacity: '0',
-      },
       events: [
         {
           image: '',
@@ -84,7 +78,6 @@ class EventResult extends Component {
           };
         });
         this.setState({ events });
-        this.setState({isVisible: {opacity: '1'}});
       })
       .catch((err) => {
         console.log('ERROR: ', err);
@@ -121,11 +114,11 @@ class EventResult extends Component {
 
               <div className="randomizer">
                 <h2 id="picky">Feeling Picky?</h2>
-                <button className="standard-btn" onClick={this.handleSubmit.bind(this)}>Pick Again!</button>
+                <button className="standard-btn" onClick={this.handleSubmit}>Pick Again!</button>
               </div>
             </div>
-          </div>
         </div>
+      </div>
     )
   }
 }

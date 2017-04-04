@@ -12,7 +12,7 @@ class Homepage extends Component {
       city: '',
       date: 'today',
       keywords: '',
-      startDate: moment().format('l'),
+      startDate: moment(),
       placeholderText: 'select a date'
     };
   }
@@ -26,10 +26,10 @@ class Homepage extends Component {
   }
 
   handleDateChange(date) {
-    console.log(date._d)
+    console.log(date.format('MMMM Do YYYY'))
     this.setState({
       startDate: date,
-      placeholderText: date._d
+      placeholderText: date.format('MMMM Do YYYY')
     })
   }
 
@@ -43,7 +43,7 @@ class Homepage extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    browserHistory.push(`/events?keywords=${this.state.keywords}&location=${this.state.city}&date=${this.state.date}`);
+    browserHistory.push(`/events?keywords=${this.state.keywords}&location=${this.state.city}&date=${this.state.placeholderText}`);
   }
 
   render() {
@@ -58,6 +58,7 @@ class Homepage extends Component {
           <div>
             <DatePicker
               className="date-picker"
+              value={this.state.placeholderText}
               onChange={this.handleDateChange.bind(this)}
               placeholderText={this.state.placeholderText}
               name="date"
