@@ -46,10 +46,10 @@ Once I had API functionality built out and was able to test it successfully usin
 ### Wireframes
 
 Home Page: 
-![Homepage](https://raw.githubusercontent.com/tomisstanding/Project-3/master/wireframes/home.jpg)
+![Homepage](https://raw.githubusercontent.com/tomisstanding/Upick-frontend/src/assets/homepage.png)
 
 User Dashboard:
-![Results Page](https://raw.githubusercontent.com/tomisstanding/Project-3/master/wireframes/dashboard.jpg)
+![Results Page](https://raw.githubusercontent.com/tomisstanding/Upick-frontend/src/assets/events.png)
 
 ### Unsolved issues
 
