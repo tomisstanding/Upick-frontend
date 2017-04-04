@@ -1,4 +1,4 @@
-# Üpick
+# (https://raw.githubusercontent.com/tomisstanding/Upick-frontend/master/src/assets/upicklogo.png)
 
 ### Author: Thomas Standing
 
