@@ -34,7 +34,7 @@ class EventResult extends Component {
     let search = browserHistory.getCurrentLocation().search.substring(1);
     search = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
 
-      fetch(`http://localhost:8000/events?keywords=${search.keywords}&location=${search.location}&date=${search.date}`, {
+      fetch(`https://u-pick.herokuapp.com/events?keywords=${search.keywords}&location=${search.location}&date=${search.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
@@ -66,7 +66,7 @@ class EventResult extends Component {
 
   handleSubmit() {
     console.log('fired!');
-    fetch(`http://localhost:8000/events?keywords=${this.state.keywords}&location=${this.state.location}&date=${this.state.date}`, {
+    fetch(`https://u-pick.herokuapp.com/events?keywords=${this.state.keywords}&location=${this.state.location}&date=${this.state.date}`, {
         method: 'GET'
       })
       .then(r => r.json())
