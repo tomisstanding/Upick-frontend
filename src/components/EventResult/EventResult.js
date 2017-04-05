@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
+import { Link } from "react-router";
 
 import Nav from "../Nav/Nav";
 import EventInfo from "./EventInfo";
