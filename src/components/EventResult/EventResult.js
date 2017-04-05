@@ -120,7 +120,9 @@ class EventResult extends Component {
 
               <div className="randomizer">
                 <h2 id="picky">Feeling Picky?</h2>
-                <button className="standard-btn" onClick={this.handleSubmit.bind(this)}>Pick Again!</button>
+                  <Link to="/">
+                    <button className="standard-btn">Pick Again!</button>
+                  </Link>
               </div>
             </div>
         </div>
