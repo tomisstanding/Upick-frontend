@@ -10,6 +10,8 @@ require('react-datepicker/dist/react-datepicker.css');
 import Homepage from "./components/Homepage/Homepage";
 import EventResult from "./components/EventResult/EventResult";
 
+import "./favicon.ico";
+
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Homepage} />

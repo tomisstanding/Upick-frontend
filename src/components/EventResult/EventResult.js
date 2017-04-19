@@ -10,17 +10,13 @@ class EventResult extends Component {
     super(props);
 
     this.state = {
-      events: [
-        {
-          image: '',
-          time: '',
-          title: 'Please Wait While We Get Your Results',
-          description: 'Thank you for your patience',
-          venue: '',
-          address: '',
-          url: ''
-        }
-      ],
+      events: [],
+      loader: {
+        display: 'block'
+      },
+      isVisible: {
+        opacity: '0',
+      },
       location: '',
       keywords: '',
       date: ''
@@ -40,7 +36,8 @@ class EventResult extends Component {
       })
       .then(r => r.json())
       .then(response => {
-
+        this.setState({loader: { display: 'none'}});
+        this.setState({isVisible: {opacity: '1'}});
         const events = response.results.search.events.event.map((event) => {
           return {
             image: event.image.url || 'https://d30y9cdsu7xlg0.cloudfront.net/png/34527-200.png',
